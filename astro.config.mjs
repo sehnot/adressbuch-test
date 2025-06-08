@@ -11,5 +11,7 @@ export default defineConfig({
   build: {
     format: "file",
   },
-  integrations: [pagefind()]
+  integrations: [pagefind()],
+  output: 'static',
+  base: '/adressbuch-test/'
 });
