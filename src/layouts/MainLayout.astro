@@ -1,0 +1,41 @@
+---
+import Search from "astro-pagefind/components/Search";
+
+// Importiere die globale CSS-Datei
+import '../styles/global.css';
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} | Kontakt Manager</title>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <header class="bg-blue-600 text-white p-4 shadow-md">
+    <div class="container mx-auto">
+      <p class="text-2xl font-bold">Kontakt Manager</p>
+      <nav class="mt-2">
+        <ul class="flex space-x-4">
+          <li><a href="/" class="hover:underline">Alle Kontakte</a></li>
+          <li><a href="/firmen" class="hover:underline">Alle Firmen</a></li>
+        </ul>
+        <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
+      </nav>
+    </div>
+  </header>
+  
+  <main class="container mx-auto py-8 px-4">
+    <h1 class="text-3xl font-bold mb-6">{title}</h1>
+    <slot />
+  </main>
+  
+  <footer class="bg-gray-200 p-4 mt-8">
+    <div class="container mx-auto text-center text-gray-600">
+      <p>Testing Astro.js + TailwindCSS + Supabase + Pagefind + GitHub Actions</p>
+    </div>
+  </footer>
+</body>
+</html>

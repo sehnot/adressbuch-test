@@ -1,0 +1,64 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getAllKontakte, getKontaktBySlug } from '../../lib/supabase';
+
+// Diese Funktion generiert alle statischen Pfade bei der Build-Zeit
+export async function getStaticPaths() {
+  const kontakte = await getAllKontakte();
+  
+  return kontakte.map(kontakt => ({
+    params: { slug: kontakt.slug },
+    props: { kontakt },
+  }));
+}
+
+// Wir können die Kontaktdaten direkt aus den Props verwenden
+const { kontakt } = Astro.props;
+---
+
+<MainLayout title={`Kontakt: ${kontakt.name}`}>
+  <div class="bg-white rounded-lg shadow-lg p-8">
+    <h3 class="text-2xl font-bold mb-4">{kontakt.name}</h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      {kontakt.telefonnummer && (
+        <div>
+          <h4 class="font-semibold text-gray-700">Telefonnummer</h4>
+          <p>{kontakt.telefonnummer}</p>
+        </div>
+      )}
+      
+      {kontakt.email && (
+        <div>
+          <h4 class="font-semibold text-gray-700">E-Mail</h4>
+          <p>{kontakt.email}</p>
+        </div>
+      )}
+    </div>
+    
+    {kontakt.firmen && (
+      <div class="mt-6 border-t pt-4">
+        <h4 class="font-semibold text-gray-700 mb-2">Firma</h4>
+        <div class="bg-gray-100 p-4 rounded">
+          <p class="font-bold">{kontakt.firmen.name}</p>
+          <p class="text-gray-600">Branche: {kontakt.firmen.branche}</p>
+          <a 
+            href={`/firmen/${kontakt.firmen.slug}`} 
+            class="inline-block mt-2 text-blue-600 hover:underline"
+          >
+            Zur Firmenseite
+          </a>
+        </div>
+      </div>
+    )}
+    
+    <div class="mt-8">
+      <a 
+        href="/" 
+        class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+      >
+        Zurück zur Übersicht
+      </a>
+    </div>
+  </div>
+</MainLayout>

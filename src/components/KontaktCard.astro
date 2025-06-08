@@ -1,0 +1,34 @@
+---
+const { kontakt } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow">
+  <h3 class="text-xl font-semibold">{kontakt.name}</h3>
+  
+  {kontakt.telefonnummer && (
+    <p class="mt-2">
+      <span class="font-medium">Telefon:</span> {kontakt.telefonnummer}
+    </p>
+  )}
+  
+  {kontakt.email && (
+    <p class="mt-1">
+      <span class="font-medium">E-Mail:</span> {kontakt.email}
+    </p>
+  )}
+  
+  {kontakt.firmen && (
+    <p class="mt-2">
+      <span class="font-medium">Firma:</span> 
+      <a href={`/firmen/${kontakt.firmen.slug}`} class="text-blue-600 hover:underline">
+        {kontakt.firmen.name}
+      </a>
+    </p>
+  )}
+  
+  <div class="mt-4">
+    <a href={`/kontakte/${kontakt.slug}`} class="text-blue-600 hover:underline">
+      Details anzeigen
+    </a>
+  </div>
+</div>

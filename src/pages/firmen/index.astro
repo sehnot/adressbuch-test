@@ -1,0 +1,22 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import FirmaCard from '../../components/FirmaCard.astro';
+import { getAllFirmen } from '../../lib/supabase';
+
+// Hole alle Firmen bei der Build-Zeit
+const firmen = await getAllFirmen();
+---
+
+<MainLayout title="Alle Firmen">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {firmen.map(firma => (
+      <FirmaCard firma={firma} />
+    ))}
+  </div>
+  
+  {firmen.length === 0 && (
+    <div class="text-center py-10 text-gray-500">
+      <p>Keine Firmen gefunden.</p>
+    </div>
+  )}
+</MainLayout>

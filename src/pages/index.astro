@@ -1,0 +1,22 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import KontaktCard from '../components/KontaktCard.astro';
+import { getAllKontakte } from '../lib/supabase';
+
+// Hole alle Kontakte bei der Build-Zeit
+const kontakte = await getAllKontakte();
+---
+
+<MainLayout title="Alle Kontakte">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {kontakte.map(kontakt => (
+      <KontaktCard kontakt={kontakt} />
+    ))}
+  </div>
+  
+  {kontakte.length === 0 && (
+    <div class="text-center py-10 text-gray-500">
+      <p>Keine Kontakte gefunden.</p>
+    </div>
+  )}
+</MainLayout>

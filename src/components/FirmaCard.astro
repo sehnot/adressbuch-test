@@ -1,0 +1,17 @@
+---
+const { firma } = Astro.props;
+---
+
+<div class="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow">
+  <h3 class="text-xl font-semibold">{firma.name}</h3>
+  
+  <p class="mt-2">
+    <span class="font-medium">Branche:</span> {firma.branche}
+  </p>
+  
+  <div class="mt-4">
+    <a href={`/firmen/${firma.slug}`} class="text-blue-600 hover:underline">
+      Details anzeigen
+    </a>
+  </div>
+</div>

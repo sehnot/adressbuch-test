@@ -1,0 +1,63 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import KontaktCard from '../../components/KontaktCard.astro';
+import { getAllFirmen, getFirmaBySlug, getKontakteByFirma } from '../../lib/supabase';
+
+// Diese Funktion generiert alle statischen Pfade bei der Build-Zeit
+export async function getStaticPaths() {
+  const firmen = await getAllFirmen();
+  
+  return Promise.all(firmen.map(async (firma) => {
+    // Hole alle Kontakte, die zu dieser Firma gehören
+    const kontakte = await getKontakteByFirma(firma.slug);
+    
+    return {
+      params: { slug: firma.slug },
+      props: { firma, kontakte },
+    };
+  }));
+}
+
+// Wir können die Firmendaten und die zugehörigen Kontakte direkt aus den Props verwenden
+const { firma, kontakte } = Astro.props;
+---
+
+<MainLayout title={`Firma: ${firma.name}`}>
+  <div class="bg-white rounded-lg shadow-lg p-8">
+    <h3 class="text-2xl font-bold mb-4">{firma.name}</h3>
+    
+    <div class="mb-6">
+      <h4 class="font-semibold text-gray-700">Branche</h4>
+      <p>{firma.branche}</p>
+    </div>
+    
+    <div class="mt-8 border-t pt-6">
+      <h4 class="text-xl font-semibold mb-4">Kontakte in dieser Firma</h4>
+      
+      {kontakte.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {kontakte.map(kontakt => (
+            <KontaktCard kontakt={{...kontakt, firmen: firma}} />
+          ))}
+        </div>
+      ) : (
+        <p class="text-gray-500">Keine Kontakte in dieser Firma gefunden.</p>
+      )}
+    </div>
+    
+    <div class="mt-8">
+      <a 
+        href="/firmen" 
+        class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors mr-2"
+      >
+        Zurück zu Firmen
+      </a>
+      <a 
+        href="/" 
+        class="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition-colors"
+      >
+        Alle Kontakte
+      </a>
+    </div>
+  </div>
+</MainLayout>
