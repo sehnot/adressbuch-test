@@ -13,5 +13,5 @@ export default defineConfig({
   },
   integrations: [pagefind()],
   output: 'static',
-  base: '/adressbuch-test/'
+  base: '/adressbuch-test'
 });

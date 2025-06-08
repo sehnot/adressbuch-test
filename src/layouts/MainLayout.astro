@@ -19,8 +19,8 @@ const { title } = Astro.props;
       <p class="text-2xl font-bold">Kontakt Manager</p>
       <nav class="mt-2">
         <ul class="flex space-x-4">
-          <li><a href="/" class="hover:underline">Alle Kontakte</a></li>
-          <li><a href="/firmen" class="hover:underline">Alle Firmen</a></li>
+          <li><a href={import.meta.env.BASE_URL} class="hover:underline">Alle Kontakte</a></li>
+          <li><a href={import.meta.env.BASE_URL + "/firmen"} class="hover:underline">Alle Firmen</a></li>
         </ul>
         <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
       </nav>

@@ -20,14 +20,14 @@ const { kontakt } = Astro.props;
   {kontakt.firmen && (
     <p class="mt-2">
       <span class="font-medium">Firma:</span> 
-      <a href={`/firmen/${kontakt.firmen.slug}`} class="text-blue-600 hover:underline">
+      <a href={import.meta.env.BASE_URL + `/firmen/${kontakt.firmen.slug}`} class="text-blue-600 hover:underline">
         {kontakt.firmen.name}
       </a>
     </p>
   )}
   
   <div class="mt-4">
-    <a href={`/kontakte/${kontakt.slug}`} class="text-blue-600 hover:underline">
+    <a href={import.meta.env.BASE_URL + `/kontakte/${kontakt.slug}`} class="text-blue-600 hover:underline">
       Details anzeigen
     </a>
   </div>
