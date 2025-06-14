@@ -21,16 +21,16 @@ Ein Adressbuch-Projekt als Testumgebung für die Integration verschiedener moder
 ### Lokale Entwicklung
 
 1. Repository klonen
-   git clone https://github.com/sehnot/adressbuch-test.git
-   cd adressbuch-test
+    git clone https://github.com/sehnot/adressbuch-test.git
+    cd adressbuch-test
 2. Abhängigkeiten installieren
-   npm install
+    npm install
 3. .env Datei erstellen
 4. Füge deine Supabase-Konfiguration hinzu:
-   SUPABASE_URL=deine-supabase-url
-   SUPABASE_ANON_KEY=dein-supabase-anon-key
+    SUPABASE_URL=deine-supabase-url
+    SUPABASE_ANON_KEY=dein-supabase-anon-key
 5. Entwicklungsserver starten
-   npm run dev
+    npm run dev
 6. Öffne <http://localhost:4321> in deinem Browser.
 
 ## 📋 Verfügbare Scripts
@@ -55,11 +55,11 @@ Dieses Projekt dient als Testumgebung für:
 
 ## 🔧 Funktionalitäten
 
-- [ ] Komplette Seite basiert auf rein statischem HTML und CSS
-- [ ] Suche mit Pagefind (JavaScript)
-- [ ] Bearbeiten der Inhalte (hier Kontakte und Firmen) direkt in Supabase (dadurch gut mit KI möglich)
-- [ ] Bearbeiten des Web-Designs mit Astro.js und TailwindCSS
-- [ ] Automatische Deployments (bei Anpassungen des Codes, Schedule 1x wöchentlich sowie manuell mit GitHub Actions)
+- Komplette Seite basiert auf rein statischem HTML und CSS
+- Suche mit Pagefind (JavaScript)
+- Bearbeiten der Inhalte (hier Kontakte und Firmen) direkt in Supabase (dadurch gut mit KI möglich)
+- Bearbeiten des Web-Designs mit Astro.js und TailwindCSS
+- Automatische Deployments (bei Anpassungen des Codes, Schedule 1x wöchentlich sowie manuell mit GitHub Actions)
 
 ## 🚀 Deployment
 
