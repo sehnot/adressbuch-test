@@ -12,6 +12,7 @@ export default defineConfig({
     format: "file",
   },
   integrations: [pagefind()],
+  site: 'https://sehnot.github.io/adressbuch-test',
   output: 'static',
   base: '/adressbuch-test'
 });
