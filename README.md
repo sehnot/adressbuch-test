@@ -21,7 +21,7 @@ Ein Adressbuch-Projekt als Testumgebung für die Integration verschiedener moder
 ### Lokale Entwicklung
 
 1. Repository klonen  
-    git clone https://github.com/sehnot/adressbuch-test.git
+    git clone https://github.com/sehnot/adressbuch-test.git  
     cd adressbuch-test
 2. Abhängigkeiten installieren  
     npm install
