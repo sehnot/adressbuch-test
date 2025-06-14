@@ -12,6 +12,7 @@ const { title } = Astro.props;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} | Kontakt Manager</title>
+  <base href={import.meta.env.BASE_URL} />
 </head>
 <body class="bg-gray-100 min-h-screen">
   <header class="bg-blue-600 text-white p-4 shadow-md">
@@ -19,8 +20,8 @@ const { title } = Astro.props;
       <p class="text-2xl font-bold">Kontakt Manager (alles Dummydaten)</p>
       <nav class="mt-2">
         <ul class="flex space-x-4">
-          <li><a href={import.meta.env.BASE_URL} class="hover:underline">Alle Kontakte</a></li>
-          <li><a href={import.meta.env.BASE_URL + "/firmen"} class="hover:underline">Alle Firmen</a></li>
+          <li><a href="./" class="hover:underline">Alle Kontakte</a></li>
+          <li><a href="./firmen" class="hover:underline">Alle Firmen</a></li>
         </ul>
         <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
       </nav>
