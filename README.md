@@ -26,8 +26,8 @@ Ein Adressbuch-Projekt als Testumgebung für die Integration verschiedener moder
 2. Abhängigkeiten installieren  
     npm install
 3. .env Datei erstellen
-4. Füge deine Supabase-Konfiguration hinzu:  
-    SUPABASE_URL=deine-supabase-url
+4. Füge deine Supabase-Konfiguration in .env hinzu:  
+    SUPABASE_URL=deine-supabase-url  
     SUPABASE_ANON_KEY=dein-supabase-anon-key
 5. Entwicklungsserver starten  
     npm run dev
