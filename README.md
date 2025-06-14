@@ -1,48 +1,83 @@
-# Astro Starter Kit: Basics
+# Adressbuch Test 📇
 
-```sh
-npm create astro@latest -- --template basics
-```
+Ein Adressbuch-Projekt als Testumgebung für die Integration verschiedener moderner Web-Technologien.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Technologie-Stack
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Astro.js](https://astro.build/) - Modernes Static Site Generator Framework
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS Framework
+- [Supabase](https://supabase.com/) - Backend-as-a-Service für Datenbank und Auth
+- [Pagefind](https://pagefind.app/) - Statische Suchfunktionalität
+- [GitHub Actions](https://github.com/features/actions) - CI/CD Pipeline
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🛠️ Installation & Setup
 
-## 🚀 Project Structure
+### Voraussetzungen
 
-Inside of your Astro project, you'll see the following folders and files:
+- Node.js (Version 18 oder höher)
+- npm oder yarn
+- Supabase Account (für Backend-Funktionalitäten)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### Lokale Entwicklung
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+1. Repository klonen
+   git clone https://github.com/sehnot/adressbuch-test.git
+   cd adressbuch-test
+2. Abhängigkeiten installieren
+   npm install
+3. .env Datei erstellen
+4. Füge deine Supabase-Konfiguration hinzu:
+   SUPABASE_URL=deine-supabase-url
+   SUPABASE_ANON_KEY=dein-supabase-anon-key
+5. Entwicklungsserver starten
+   npm run dev
+6. Öffne <http://localhost:4321> in deinem Browser.
 
-## 🧞 Commands
+## 📋 Verfügbare Scripts
 
-All commands are run from the root of the project, from a terminal:
+|Kommando           |Beschreibung                          |
+|-------------------|--------------------------------------|
+|`npm install`      |Installiert alle Abhängigkeiten       |
+|`npm run dev`      |Startet den lokalen Entwicklungsserver|
+|`npm run build`    |Erstellt die Production-Version       |
+|`npm run preview`  |Vorschau der erstellten Seite         |
+|`npm run astro ...`|Führt Astro CLI-Kommandos aus         |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🎯 Projektziele
 
-## 👀 Want to learn more?
+Dieses Projekt dient als Testumgebung für:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Frontend-Entwicklung mit Astro.js und TailwindCSS
+- Backend-Integration mit Supabase
+- Suchfunktionalität durch Pagefind
+- Automatisierte Deployments via GitHub Actions
+- Moderne JAMstack-Architektur
+
+## 🔧 Funktionalitäten
+
+- [ ] Komplette Seite basiert auf rein statischem HTML und CSS
+- [ ] Suche mit Pagefind (JavaScript)
+- [ ] Bearbeiten der Inhalte (hier Kontakte und Firmen) direkt in Supabase (dadurch gut mit KI möglich)
+- [ ] Bearbeiten des Web-Designs mit Astro.js und TailwindCSS
+- [ ] Automatische Deployments (bei Anpassungen des Codes, Schedule 1x wöchentlich sowie manuell mit GitHub Actions)
+
+## 🚀 Deployment
+
+Das Projekt nutzt GitHub Actions für automatische Deployments. Bei jedem Push zum `main`-Branch wird die Anwendung automatisch gebaut und deployed.
+
+## 📚 Weiterführende Links
+
+- [Astro Dokumentation](https://docs.astro.build)
+- [TailwindCSS Dokumentation](https://tailwindcss.com/docs)
+- [Supabase Dokumentation](https://supabase.com/docs)
+- [Pagefind Dokumentation](https://pagefind.app/docs)
+
+## 📄 Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz.
+
+-----
+
+Status: 🚧 In Entwicklung
+
+Erstellt mit ❤️ und modernen Web-Technologien.
