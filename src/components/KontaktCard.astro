@@ -3,6 +3,7 @@ const { kontakt } = Astro.props;
 ---
 
 <div class="bg-white rounded-lg shadow-md p-6 mb-4 hover:shadow-lg transition-shadow">
+  <h4 class="text-xs">KontaktCard.astro</h4>
   <h3 class="text-xl font-semibold">{kontakt.name}</h3>
   
   {kontakt.telefonnummer && (
@@ -20,14 +21,14 @@ const { kontakt } = Astro.props;
   {kontakt.firmen && (
     <p class="mt-2">
       <span class="font-medium">Firma:</span> 
-      <a href={import.meta.env.BASE_URL + `/firmen/${kontakt.firmen.slug}`} class="text-blue-600 hover:underline">
+      <a href={ "./firmen/" + kontakt.firmen.slug } class="text-blue-600 hover:underline">
         {kontakt.firmen.name}
       </a>
     </p>
   )}
   
   <div class="mt-4">
-    <a href={import.meta.env.BASE_URL + `/kontakte/${kontakt.slug}`} class="text-blue-600 hover:underline">
+    <a href={ `./kontakte/${kontakt.slug}` } class="text-blue-600 hover:underline">
       Details anzeigen
     </a>
   </div>

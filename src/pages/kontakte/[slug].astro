@@ -18,6 +18,7 @@ const { kontakt } = Astro.props;
 
 <MainLayout title={`Kontakt: ${kontakt.name}`}>
   <div class="bg-white rounded-lg shadow-lg p-8">
+    <h4 class="text-xs">kontakte / [slug].astro</h4>
     <h3 class="text-2xl font-bold mb-4">{kontakt.name}</h3>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -43,7 +44,7 @@ const { kontakt } = Astro.props;
           <p class="font-bold">{kontakt.firmen.name}</p>
           <p class="text-gray-600">Branche: {kontakt.firmen.branche}</p>
           <a 
-            href={import.meta.env.BASE_URL + `/firmen/${kontakt.firmen.slug}`} 
+            href={`./firmen/${kontakt.firmen.slug}`} 
             class="inline-block mt-2 text-blue-600 hover:underline"
           >
             Zur Firmenseite
@@ -53,10 +54,7 @@ const { kontakt } = Astro.props;
     )}
     
     <div class="mt-8">
-      <a 
-        href={import.meta.env.BASE_URL}
-        class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
-      >
+      <a href="./" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
         Zurück zur Übersicht
       </a>
     </div>
