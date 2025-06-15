@@ -10,6 +10,8 @@ export default defineConfig({
   },
   build: {
     format: "file",
+    assets: 'assets',
+    inlineStylesheets: 'never'
   },
   integrations: [pagefind()],
   site: 'https://sehnot.github.io',
