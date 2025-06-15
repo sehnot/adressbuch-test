@@ -14,5 +14,5 @@ export default defineConfig({
   integrations: [pagefind()],
   site: 'https://sehnot.github.io',
   output: 'static',
-  base: '/adressbuch-test'
+  base: '/adressbuch-test/'
 });
