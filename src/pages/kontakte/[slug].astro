@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getAllKontakte, getKontaktBySlug } from '../../lib/supabase';
+import Search from "astro-pagefind/components/Search";
 
 // Diese Funktion generiert alle statischen Pfade bei der Build-Zeit
 export async function getStaticPaths() {
@@ -21,7 +22,7 @@ const { kontakt } = Astro.props;
     <h4 class="text-xs">kontakte / [slug].astro</h4>
     <h3 class="text-2xl font-bold mb-4">{kontakt.name}</h3>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
       {kontakt.telefonnummer && (
         <div>
           <h4 class="font-semibold text-gray-700">Telefonnummer</h4>
@@ -35,7 +36,15 @@ const { kontakt } = Astro.props;
           <p>{kontakt.email}</p>
         </div>
       )}
-    </div>
+
+      {kontakt.description && (
+        <div>
+          <h4 class="font-semibold text-gray-700"> Beschreibung</h4>
+          <p><div set:html={kontakt.description} /></p>
+        </div>
+      )}
+
+      </div>
     
     {kontakt.firmen && (
       <div class="mt-6 border-t pt-4">
