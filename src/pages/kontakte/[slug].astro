@@ -1,7 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getAllKontakte, getKontaktBySlug } from '../../lib/supabase';
-import Search from "astro-pagefind/components/Search";
+import { adjustContent } from '../../utils/contentAdjuster.js';
 
 // Diese Funktion generiert alle statischen Pfade bei der Build-Zeit
 export async function getStaticPaths() {
@@ -15,6 +15,9 @@ export async function getStaticPaths() {
 
 // Wir können die Kontaktdaten direkt aus den Props verwenden
 const { kontakt } = Astro.props;
+
+kontakt.description = adjustContent(kontakt.description);
+
 ---
 
 <MainLayout title={`Kontakt: ${kontakt.name}`}>
@@ -40,7 +43,7 @@ const { kontakt } = Astro.props;
       {kontakt.description && (
         <div>
           <h4 class="font-semibold text-gray-700"> Beschreibung</h4>
-          <p><div set:html={kontakt.description} /></p>
+          <p><div set:html={kontakt.description} ></div></p>
         </div>
       )}
 
