@@ -6,7 +6,7 @@ Ein Adressbuch-Projekt als Testumgebung für die Integration verschiedener moder
 
 - [Astro.js](https://astro.build/) - Modernes Static Site Generator Framework
 - [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS Framework
-- [Supabase](https://supabase.com/) - Backend-as-a-Service für Datenbank und Auth
+- [Supabase](https://supabase.com/) - Backend-as-a-Service für Datenbank
 - [Pagefind](https://pagefind.app/) - Statische Suchfunktionalität
 - [GitHub Actions](https://github.com/features/actions) - CI/CD Pipeline
 
@@ -26,7 +26,7 @@ Ein Adressbuch-Projekt als Testumgebung für die Integration verschiedener moder
 2. Abhängigkeiten installieren  
     npm install
 3. .env Datei erstellen
-4. Füge deine Supabase-Konfiguration in .env hinzu:  
+4. Supabase-Konfiguration in .env hinzufügen:  
     SUPABASE_URL=deine-supabase-url  
     SUPABASE_ANON_KEY=dein-supabase-anon-key
 5. Entwicklungsserver starten  
@@ -59,7 +59,7 @@ Dieses Projekt dient als Testumgebung für:
 - Suche mit Pagefind (JavaScript)
 - Bearbeiten der Inhalte (hier Kontakte und Firmen) direkt in Supabase (dadurch gut mit KI möglich)
 - Bearbeiten des Web-Designs mit Astro.js und TailwindCSS
-- Automatische Deployments (bei Anpassungen des Codes, Schedule 1x wöchentlich sowie manuell mit GitHub Actions)
+- Automatische Deployments (automatisch bei Anpassungen des Codes via Push, zusätzlich per Schedule 1x wöchentlich sowie manuell) mit GitHub Actions
 
 ## 🚀 Deployment
 
